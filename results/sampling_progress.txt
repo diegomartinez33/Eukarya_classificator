@@ -1,0 +1,8 @@
+GR_Salmon_60simulado_clean.fasta
+GR_Salmon_60simulado_clean.fasta
+GR_Salmon_60simulado_clean.fasta
+GR_Salmon_60simulado_clean.fasta
+GR_Cod_60simulado_clean.fasta
+GR_Tilapia_60simulado_clean.fasta
+GR_Salmon_60simulado_clean.fasta
+GR_Cod_60simulado_clean.fasta
