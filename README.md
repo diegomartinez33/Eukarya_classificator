@@ -1,2 +1,2 @@
-# Eukarya classificator
-Repository of taxonomic classificator of organisms in Eukarya domain
+# Eukarya classifier
+Repository of taxonomic classifier of organisms in Eukarya domain
