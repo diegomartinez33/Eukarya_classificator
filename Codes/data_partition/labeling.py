@@ -5,8 +5,6 @@ import sys
 import time
 import random
 
-## Violin plots
-biol_dir = "/hpcfs/home/da.martinez33/Biologia"
 real_names = ["stickleback", "whale_shark","bacalao","tilapia","salmon",
              "Acyrthosiphon","bombyx","Harpegnathos","locusta","tribolium"]
 fishes = real_names[0:5]
@@ -27,17 +25,19 @@ def group_label(animalname,cont):
 		raise ValueError("Not assigned numeric label")
 	return num_label
 
-def grouping(label_data,test_percent=0.2):
+def grouping_partition(label_data, ani_gps=animal_groups, test_percent=0.2):
 	train_tip = 1
 	test_tip = 2
 	train_list = []
 	test_list = []
 	group_list = np.zeros(len(label_data))
-	for group in animal_groups:
-		num_samples = round(len(group) * (1 - 0.2))
+	train_group_list = []
+	for group in ani_gps:
+		num_samples = round(len(group) * (1 - test_percent))
 		shuffled_list = group
 		random.shuffle(shuffled_list)
 		train_list.extend(shuffled_list[:num_samples])
+		train_group_list.append(shuffled_list[:num_samples])
 		test_list.extend(shuffled_list[num_samples:])
 
 	for cont, lab in enumerate(label_data):
@@ -45,6 +45,27 @@ def grouping(label_data,test_percent=0.2):
 			group_list[cont] = train_tip
 		else:
 			group_list[cont] = test_tip
+
+	return group_list, train_group_list
+
+def grouping_crossval(label_data, ani_gps=animal_groups):
+	train_tips = list(range(animal_groups[0]))
+	group_list = np.zeros(len(label_data))
+	shuffled_ani_list = []
+	for group in animal_groups:
+		shuffled_group = group
+		random.shuffle(shuffled_group)
+		shuffled_ani_list.append(np.array(shuffled_group))
+
+	shuffled_ani_list = np.array(shuffled_ani_list)
+
+	for cont, lab in enumerate(label_data):
+		for i in shuffled_ani_list.shape[1]:
+			if lab in shuffled_ani_list[:,i]:
+				group_list[cont] = train_tips[i]
+				break
+			else:
+				continue
 
 	return group_list
 

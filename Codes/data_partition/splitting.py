@@ -16,8 +16,6 @@ sys.path.append(data_partition_folder)
 from file_management import rws_files as rws
 from data_partition import labeling as lb
 
-## Violin plots
-biol_dir = "/hpcfs/home/da.martinez33/Biologia"
 real_names = ["stickleback", "whale_shark","bacalao","tilapia","salmon",
              "Acyrthosiphon","bombyx","Harpegnathos","locusta","tribolium"]
 
@@ -70,11 +68,12 @@ def split_data(counts_data,split_type="all",test_percent=0.2,type_labeling="per_
             num_animals += 1
         labels = np.array(labels)
 
-        groups_list = lb.grouping(labels)
+        groups_list, train_grp_animals = lb.grouping_partition(labels)
         gkf = GroupKFold(n_splits=2)
         for train_indx, test_indx in gkf.split(data, labels, groups=groups_list):
             train_data, test_data = data[train_indx], data[test_indx]
             train_labels, test_labels = labels[train_indx], labels[test_indx]
+            s_labels = labels[train_indx]
     else:
         raise ValueError("You have to specify a valid split type in split_type parameter")
 
@@ -83,9 +82,12 @@ def split_data(counts_data,split_type="all",test_percent=0.2,type_labeling="per_
     test_labels = lb.create_num_labels(test_labels,type_labeling)
 
     train_part['data'] = train_data
-    train_part['labels'] = test_labels
+    train_part['labels'] = train_labels
     test_part['data'] = test_data
     test_part['labels'] = test_labels
+    if "s_labels" in locals():
+        train_part['s_labs'] = s_labels
+        train_part['train_grps'] = train_grp_animals
     return (train_part,test_part)
 
 

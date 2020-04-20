@@ -11,14 +11,13 @@ cv_library_folder = os.path.join(biol_dir,'Codes','cv_lib')
 data_partition_folder = os.path.join(biol_dir,'Codes','data_partition')
 sys.path.append(file_manage_folder)
 sys.path.append(cv_library_folder)
+sys.path.append(data_partition_folder)
 
 from file_management import get_names as gn
 from file_management import rws_files as rws
 from cv_lib import cv_ids
 from data_partition import splitting
 
-## Violin plots
-biol_dir = "/hpcfs/home/da.martinez33/Biologia"
 ani_names = ["stickleback", "whaleshark","Cod","tilapia","salmon",
              "acyroltosyphon","bombix","harpegrathos","locusta","tribolium"] 
 real_names = ["stickleback", "whale_shark","bacalao","tilapia","salmon",
