@@ -1,0 +1,4 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-2-gpu.local
+Corri el: Thu Feb 20 11:13:38 -05 2020
+slurmstepd: error: get_exit_code task 0 died by signal

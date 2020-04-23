@@ -1,0 +1,4 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-12.local
+Corri el: Thu Feb 20 16:30:44 -05 2020
+slurmstepd: error: *** JOB 122083 ON node-12 CANCELLED AT 2020-02-20T16:31:03 ***

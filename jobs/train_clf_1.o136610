@@ -1,0 +1,44 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-10.local
+Corri el: Thu Apr 23 08:37:44 -05 2020
+Recibe tipo de clasificador
+Begin fold:  1
+Traceback (most recent call last):
+  File "train_classificators_2.py", line 144, in <module>
+    train_model(sys.argv[1], sys.argv[2])
+  File "train_classificators_2.py", line 91, in train_model
+    clf=type_classif, **kwargs)
+  File "/hpcfs/home/da.martinez33/Biologia/Codes/data_partition/cross_validation.py", line 78, in k_fold_iter
+    train_cv = get_train_cv_results(data, labels, kf, clf_function, **kwargs)
+  File "/hpcfs/home/da.martinez33/Biologia/Codes/data_partition/cross_validation.py", line 54, in get_train_cv_results
+    test_labels, **kwargs)
+  File "/hpcfs/home/da.martinez33/Biologia/Codes/classification/classifiers.py", line 38, in rf_classif
+    clf.fit(train_data, train_labels)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/_forest.py", line 383, in fit
+    for i, t in enumerate(trees))
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/parallel.py", line 1007, in __call__
+    while self.dispatch_one_batch(iterator):
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/parallel.py", line 835, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/parallel.py", line 754, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/_parallel_backends.py", line 209, in apply_async
+    result = ImmediateResult(func)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/_parallel_backends.py", line 590, in __init__
+    self.results = batch()
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/_forest.py", line 165, in _parallel_build_trees
+    tree.fit(X, y, sample_weight=curr_sample_weight, check_input=False)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/sklearn/tree/_classes.py", line 877, in fit
+    X_idx_sorted=X_idx_sorted)
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/sklearn/tree/_classes.py", line 367, in fit
+    builder.build(self.tree_, X, y, sample_weight, X_idx_sorted)
+  File "sklearn/tree/_tree.pyx", line 146, in sklearn.tree._tree.DepthFirstTreeBuilder.build
+  File "sklearn/tree/_tree.pyx", line 244, in sklearn.tree._tree.DepthFirstTreeBuilder.build
+  File "sklearn/tree/_tree.pyx", line 739, in sklearn.tree._tree.Tree._add_node
+  File "sklearn/tree/_tree.pyx", line 710, in sklearn.tree._tree.Tree._resize_c
+  File "sklearn/tree/_utils.pyx", line 41, in sklearn.tree._utils.safe_realloc
+MemoryError: could not allocate 58720256 bytes

@@ -8,11 +8,14 @@ import time
 biol_dir = "/hpcfs/home/da.martinez33/Biologia"
 file_manage_folder = os.path.join(biol_dir,'Codes','file_management')
 data_partition_folder = os.path.join(biol_dir,'Codes','data_partition')
+metrics_folder = os.path.join(biol_dir,'Codes','metrics')
 sys.path.append(file_manage_folder)
 sys.path.append(data_partition_folder)
+sys.path.append(metrics_folder)
 
 from file_management import rws_files as rws
 from data_partition import cross_validation as cv
+from metrics import get_metrics_binary as gmb
 
 ## directories
 biol_dir = "/hpcfs/home/da.martinez33/Biologia"
@@ -20,6 +23,29 @@ data_dir = os.path.join(biol_dir,"Codes","counts")
 classif_dir = os.path.join(biol_dir,"Data","classification")
 partitions_dir = os.path.join(classif_dir,"data_partitions")
 models_dir = os.path.join(classif_dir,"models")
+results_dir = os.path.join(biol_dir,"results","training")
+
+def get_metrics(train_results, type_crossval, type_classif, **kwargs):
+	#exp_folder = "{}_{}_cv".format(type_crossval,type_classif)
+	if type_classif == 'rf':
+		exp_folder = "{}_{}_{}_{}_cv".format(type_crossval,type_classif,
+			kwargs["n_trees"], kwargs["boots"])
+	elif type_classif == 'svc':
+		exp_folder = "{}_{}_{}_{}_cv".format(type_crossval,type_classif,
+			kwargs["c"], kwargs["kernel_type"], kwargs["gamma_value"])
+	else:
+		exp_folder = "{}_{}_cv".format(type_crossval,type_classif)
+
+	savefolder = os.path.join(results_dir,exp_folder)
+	gmb.ACC_score(train_results)
+	gmb.classif_report(train_results)
+	gmb.get_prf(train_results)
+	gmb.mcc(train_results)
+	if os.path.isdir(savefolder) != True:
+		os.mkdir(savefolder)
+	gmb.p_r_curve_cv(train_results, savefolder + '/P_R_curve_cv.png')
+	gmb.ROC_curve(train_results, savefolder + '/ROC_curve_cv.png')
+
 
 # Código para entrenar con los diferentes clasificadores y métodos de crossvalidación
 def train_model(type_crossval="k-fold", type_classif="qda"):
@@ -49,7 +75,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		kwargs = {}
 
 	elif type_classif == 'rf':
-		kwargs = {"n_trees" : 100, "boots" : False}
+		kwargs = {"n_trees" : 100, "boots" : True}
 
 	elif type_classif == 'svc':
 		kwargs = {"c" : 1.0, "kernel_type" : 'linear', "gamma_value" : 'scale'}
@@ -94,20 +120,23 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	print(len(train_results))
 	print(train_results[0][1].shape)
 	print(train_results[0][2].shape)
-	if len(train_results[0]) == 4:
-		print(train_results[0][2].shape)
-		print(train_results[0][3])
+	print(train_results[0][2])
+	if len(train_results[0]) == 5:
+		print(train_results[0][3].shape)
+		print(train_results[0][4])
 	else:
-		print(train_results[0][2])
+		print(train_results[0][3])
 
 	acc_values = np.zeros(len(train_results))
 	for i in range(len(train_results)):
-		if len(train_results[0]) == 4:
-			acc_values[i] = train_results[i][3]
+		if len(train_results[0]) == 5:
+			acc_values[i] = train_results[i][4]
 		else:
-			acc_values[i] = train_results[i][2]
+			acc_values[i] = train_results[i][3]
 
 	print(np.mean(acc_values))
+
+	get_metrics(train_results, type_crossval, type_classif, **kwargs)
 
 
 if __name__ == '__main__':

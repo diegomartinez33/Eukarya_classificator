@@ -1,0 +1,29 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-13.local
+Corri el: Thu Feb 20 16:30:14 -05 2020
+Exception ignored in: <generator object as_handle at 0x7fc087515258>
+Traceback (most recent call last):
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/Bio/File.py", line 119, in as_handle
+MemoryError: 
+Exception ignored in: <generator object parse at 0x7fc0875aa1a8>
+Traceback (most recent call last):
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/Bio/SeqIO/__init__.py", line 662, in parse
+MemoryError: 
+Inciando con (locusta)....
+
+GCA_000516895.1_LocustGenomeV1_genomic.fna
+Traceback (most recent call last):
+  File "/hpcfs/home/da.martinez33/anaconda3/lib/python3.6/site-packages/Bio/SeqRecord.py", line 220, in __init__
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError

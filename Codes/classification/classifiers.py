@@ -20,28 +20,28 @@ def get_train_results(model, test_data, test_labels, is_svc=False):
 	preds = model.predict(test_data)
 	mean_acc = model.score(test_data, test_labels)
 	if is_svc:
-		return (preds, mean_acc)
+		return [test_labels, preds, mean_acc]
 	else:
 		probas = model.predict_proba(test_data)
-		return (preds, probas, mean_acc)
+		return [test_labels, preds, probas, mean_acc]
 
 # 3 Clasificadores: QDA, RF, SVC
 def qda_classif(train_data, train_labels, test_data, test_labels):
 	clf = QDA()
 	clf.fit(train_data, train_labels)
 	results = get_train_results(clf, test_data, test_labels)
-	return (clf, results[0], results[1], results[2])
+	return [clf, results[0], results[1], results[2], results[3]]
 
 def rf_classif(train_data, train_labels, test_data, test_labels, 
 	n_trees=100, boots=False):
 	clf = RFC(n_estimators=n_trees, bootstrap=boots, max_features="sqrt")
 	clf.fit(train_data, train_labels)
 	results = get_train_results(clf, test_data, test_labels)
-	return (clf, results[0], results[1], results[2])
+	return [clf, results[0], results[1], results[2], results[3]]
 
 def svc_classif(train_data, train_labels, test_data, test_labels,
 	c=1.0, kernel_type='linear', gamma_value='scale'):
-	clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value)
+	clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value, probability=True)
 	clf.fit(train_data, train_labels)
 	results = get_train_results(clf, test_data, test_labels, is_svc=True)
-	return (clf, results[0], results[1])
+	return [clf, results[0], results[1], results[2], results[3]]
