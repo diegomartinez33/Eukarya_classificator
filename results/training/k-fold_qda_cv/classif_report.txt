@@ -1,0 +1,50 @@
+Classification report for fold 0
+              precision    recall  f1-score   support
+
+      fishes       0.55      0.72      0.62    227795
+     insects       0.60      0.41      0.49    228207
+
+    accuracy                           0.57    456002
+   macro avg       0.57      0.57      0.56    456002
+weighted avg       0.57      0.57      0.56    456002
+
+Classification report for fold 1
+              precision    recall  f1-score   support
+
+      fishes       0.50      0.98      0.66    228065
+     insects       0.45      0.02      0.04    227936
+
+    accuracy                           0.50    456001
+   macro avg       0.47      0.50      0.35    456001
+weighted avg       0.47      0.50      0.35    456001
+
+Classification report for fold 2
+              precision    recall  f1-score   support
+
+      fishes       0.57      0.26      0.36    227709
+     insects       0.52      0.80      0.63    228292
+
+    accuracy                           0.53    456001
+   macro avg       0.54      0.53      0.50    456001
+weighted avg       0.54      0.53      0.50    456001
+
+Classification report for fold 3
+              precision    recall  f1-score   support
+
+      fishes       0.56      0.05      0.09    228242
+     insects       0.50      0.96      0.66    227759
+
+    accuracy                           0.50    456001
+   macro avg       0.53      0.50      0.37    456001
+weighted avg       0.53      0.50      0.37    456001
+
+Classification report for fold 4
+              precision    recall  f1-score   support
+
+      fishes       0.55      0.45      0.50    228190
+     insects       0.53      0.63      0.58    227811
+
+    accuracy                           0.54    456001
+   macro avg       0.54      0.54      0.54    456001
+weighted avg       0.54      0.54      0.54    456001
+

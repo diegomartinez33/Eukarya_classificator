@@ -21,44 +21,62 @@ import matplotlib.pyplot as plt
 import sys
 from itertools import cycle
 
+biol_dir = "/hpcfs/home/da.martinez33/Biologia"
+file_manage_folder = os.path.join(biol_dir,'Codes','file_management')
+from file_management import rws_files as rws
+
 plt.rcParams.update({'font.size': 12})
 
 class_labs = ['fishes', 'insects']
 
 
-def ACC_score(train_cv_list):
+def ACC_score(train_cv_list, savePath=''):
     """ Function to obtain the ACC value from predicted
          labels and groundtruth labels """
     folds = len(train_cv_list)
     for i in range(folds):
         y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
         acc = accuracy_score(y_true, y_pred)
-        print('ACC for fold {0}: {1:0.2f}'.format(i, acc))
+        line = 'ACC for fold {0}: {1:0.2f}'.format(i, acc)
+        print(line)
+        rws.write_results(savePath,line)
 
-def classif_report(train_cv_list, class_names=class_labs):
+def classif_report(train_cv_list, class_names=class_labs, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
         y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
         class_rep = classification_report(y_true, y_pred, target_names=class_names)
-        print('Classification report for fold {}'.format(i))
+        print('\nClassification report for fold {}'.format(i))
         print(class_rep)
+        rws.write_results(savePath,'Classification report for fold {}'.format(i))
+        rws.write_results(savePath, class_rep)
 
-def get_prf(train_cv_list):
+def get_prf(train_cv_list, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
         y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
         results = precision_recall_fscore_support(y_true, y_pred, pos_label=1)
-        print('P-R and F1 for fold {}'.format(i))
-        print('Precision: {}'.format(results[0]))
-        print('Recall: {}'.format(results[1]))
-        print('F1_score: {}'.format(results[2]))
+        line1 = '\nP-R and F1 for fold {}'.format(i)
+        print(line1)
+        rws.write_results(savePath,line1)
+        line2 = 'Precision: {}'.format(results[0]) 
+        print(line2)
+        rws.write_results(savePath, line2)
+        line3 = 'Recall: {}'.format(results[1])
+        print(line3)
+        rws.write_results(savePath, line3)
+        line4 = 'F1_score: {}'.format(results[2])
+        print(line4)
+        rws.write_results(savePath, line4)
 
-def mcc(train_cv_list):
+def mcc(train_cv_list, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
         y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
         mcc = matthews_corrcoef(y_true, y_pred)
-        print('MCC value for fold {} is: {}'.format(i, mcc))
+        line = 'MCC value for fold {} is: {}'.format(i, mcc)
+        print(line)
+        rws.write_results(savePath, line)
 
 def p_r_curve(y_test, probas_pred, averaged='Yes', savePath='',class_names=class_labs):
     """ Function to create the precision-recall curve depending on
@@ -153,10 +171,10 @@ def p_r_curve_cv(train_cv_list, savePath=''):
     #y_test = label_binarize(y_test, list(range(0, fold_num)))
 
     for i in range(folds):
-        y_test, probas_pred = train_cv_list[i][1], train_cv_list[i][2]
+        y_test, probas_pred = train_cv_list[i][1], train_cv_list[i][3]
         precision[i], recall[i], _ = precision_recall_curve(y_test,
-                                                            probas_pred)
-        average_precision[i] = average_precision_score(y_test, probas_pred)
+                                                            probas_pred[:,1])
+        average_precision[i] = average_precision_score(y_test, probas_pred[:,1])
 
     colors = cycle(['b', 'g', 'r', 'c', 'm', 'y', 'k'])
 
@@ -198,8 +216,8 @@ def ROC_curve(train_cv_list, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
         y_test, y_score = train_cv_list[i][1], train_cv_list[i][3]
-        fpr[i], tpr[i], _ = roc_curve(y_test, y_score[:,0], pos_label=1)
-        roc_auc[i] = roc_auc_score(y_test, y_score[:,0])
+        fpr[i], tpr[i], _ = roc_curve(y_test, y_score[:,1], pos_label=1)
+        roc_auc[i] = roc_auc_score(y_test, y_score[:,1])
 
     colors = cycle(['b', 'g', 'r', 'c', 'm', 'y', 'k'])
 

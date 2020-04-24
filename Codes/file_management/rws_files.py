@@ -19,6 +19,17 @@ def write_job_results(jobPath, jobFile,len_subfragmented):
             f.write(line + "\n")
             f.close()
 
+def write_results(resultsPath, line_to_write):
+    """ Function to write in a follow-job"""
+    if os.path.isfile(resultsPath):
+        with open(resultsPath, 'a') as f:
+            f.write(line_to_write + "\n")
+            f.close()
+    else:
+        with open(resultsPath, 'w') as f:
+            f.write(line_to_write + "\n")
+            f.close()
+
 def loadData(dataPathFile):
     """ Function to load the database dictionary from input path of pickle """
     if dataPathFile[-3:] == 'pkl':

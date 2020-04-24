@@ -1,0 +1,75 @@
+
+P-R and F1 for fold 0
+Precision: [0.75261308 0.79495369]
+Recall: [0.8107545  0.73355319]
+F1_score: [0.78060266 0.7630202 ]
+
+P-R and F1 for fold 1
+Precision: [0.75269958 0.79607815]
+Recall: [0.81099375 0.73468861]
+F1_score: [0.78076007 0.7641524 ]
+
+P-R and F1 for fold 2
+Precision: [0.75381282 0.79429796]
+Recall: [0.80983523 0.73519499]
+F1_score: [0.78082044 0.76360454]
+
+P-R and F1 for fold 3
+Precision: [0.75563913 0.79305581]
+Recall: [0.80864765 0.7371321 ]
+F1_score: [0.78124525 0.76407204]
+
+P-R and F1 for fold 4
+Precision: [0.75395168 0.79499711]
+Recall: [0.80977531 0.73624919]
+F1_score: [0.78086707 0.76449619]
+
+P-R and F1 for fold 0
+Precision: [0.75500137 0.79521997]
+Recall: [0.81075231 0.73638112]
+F1_score: [0.78188429 0.76467035]
+
+P-R and F1 for fold 1
+Precision: [0.75316554 0.79550215]
+Recall: [0.81109576 0.73435609]
+F1_score: [0.78105796 0.76370716]
+
+P-R and F1 for fold 2
+Precision: [0.75154203 0.79411041]
+Recall: [0.80861741 0.73413115]
+F1_score: [0.77903572 0.76294377]
+
+P-R and F1 for fold 3
+Precision: [0.75442686 0.79523171]
+Recall: [0.81050822 0.73610124]
+F1_score: [0.78146267 0.76452485]
+
+P-R and F1 for fold 4
+Precision: [0.75415067 0.79402143]
+Recall: [0.81008851 0.73489979]
+F1_score: [0.78111941 0.76331753]
+
+P-R and F1 for fold 0
+Precision: [0.75402127 0.7962724 ]
+Recall: [0.81149541 0.73566871]
+F1_score: [0.78170333 0.76477181]
+
+P-R and F1 for fold 1
+Precision: [0.75371389 0.79502184]
+Recall: [0.8101743  0.73552581]
+F1_score: [0.78092491 0.76411745]
+
+P-R and F1 for fold 2
+Precision: [0.75336576 0.79344251]
+Recall: [0.80852538 0.73536003]
+F1_score: [0.77997156 0.76329793]
+
+P-R and F1 for fold 3
+Precision: [0.75383673 0.793855  ]
+Recall: [0.80911522 0.73560137]
+F1_score: [0.78049843 0.76361881]
+
+P-R and F1 for fold 4
+Precision: [0.75377382 0.79422943]
+Recall: [0.809977   0.73489305]
+F1_score: [0.7808654  0.76340999]

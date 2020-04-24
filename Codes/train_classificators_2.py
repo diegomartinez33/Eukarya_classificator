@@ -75,7 +75,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		kwargs = {}
 
 	elif type_classif == 'rf':
-		kwargs = {"n_trees" : 100, "boots" : True}
+		kwargs = {"n_trees" : 10, "boots" : False}
 
 	elif type_classif == 'svc':
 		kwargs = {"c" : 1.0, "kernel_type" : 'linear', "gamma_value" : 'scale'}
@@ -123,6 +123,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	print(train_results[0][2])
 	if len(train_results[0]) == 5:
 		print(train_results[0][3].shape)
+		print(train_results[0][3])
 		print(train_results[0][4])
 	else:
 		print(train_results[0][3])
