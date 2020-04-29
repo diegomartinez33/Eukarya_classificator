@@ -49,7 +49,7 @@ def grouping_partition(label_data, ani_gps=animal_groups, test_percent=0.2):
 	return group_list, train_group_list
 
 def grouping_crossval(label_data, ani_gps=animal_groups):
-	train_tips = list(range(animal_groups[0]))
+	train_tips = list(range(len(animal_groups[0])))
 	group_list = np.zeros(len(label_data))
 	shuffled_ani_list = []
 	for group in animal_groups:
@@ -60,7 +60,7 @@ def grouping_crossval(label_data, ani_gps=animal_groups):
 	shuffled_ani_list = np.array(shuffled_ani_list)
 
 	for cont, lab in enumerate(label_data):
-		for i in shuffled_ani_list.shape[1]:
+		for i in range(shuffled_ani_list.shape[1]):
 			if lab in shuffled_ani_list[:,i]:
 				group_list[cont] = train_tips[i]
 				break

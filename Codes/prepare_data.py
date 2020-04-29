@@ -70,7 +70,7 @@ def data_reading():
     print("saved data in: \n",raw_data_file)
 
 def data_splitting():
-	split_type="all" #"all" or "general"
+	split_type="general" #"all" or "general"
 	test_percent=0.2
 	type_labeling="per_group" #"per_group" or "per_spp"
 	raw_data_file = os.path.join(results_dir,"counts_per_animal.pkl")

@@ -86,6 +86,7 @@ def split_data(counts_data,split_type="all",test_percent=0.2,type_labeling="per_
     test_part['data'] = test_data
     test_part['labels'] = test_labels
     if "s_labels" in locals():
+        print("s_labels does exist")
         train_part['s_labs'] = s_labels
         train_part['train_grps'] = train_grp_animals
     return (train_part,test_part)

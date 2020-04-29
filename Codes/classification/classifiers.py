@@ -41,7 +41,10 @@ def rf_classif(train_data, train_labels, test_data, test_labels,
 
 def svc_classif(train_data, train_labels, test_data, test_labels,
 	c=1.0, kernel_type='linear', gamma_value='scale'):
-	clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value, probability=True)
+	if kernel_type == 'linear':
+		clf = svm.LinearSVC(C=c)
+	else:
+		clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value, probability=True)
 	clf.fit(train_data, train_labels)
 	results = get_train_results(clf, test_data, test_labels, is_svc=True)
 	return [clf, results[0], results[1], results[2], results[3]]
