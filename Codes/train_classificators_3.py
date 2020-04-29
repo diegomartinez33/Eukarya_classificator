@@ -59,7 +59,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	- "qda"
 	- "rf 
 	- "svc" """
-	split_type="all" #"all" or "general"
+	split_type="general" #"all" or "general"
 	test_percent=0.2
 	type_labeling="per_group" #"per_group" or "per_spp"
 	splitted_data_file = os.path.join(partitions_dir,
@@ -75,7 +75,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		kwargs = {}
 
 	elif type_classif == 'rf':
-		kwargs = {"n_trees" : 100, "boots" : False}
+		kwargs = {"n_trees" : 100, "boots" : True}
 
 	elif type_classif == 'svc':
 		kwargs = {"c" : 1.0, "kernel_type" : 'linear', "gamma_value" : 'scale'}
@@ -105,12 +105,12 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		train_grps_animals = train_dict['train_grps']
 		n_groups = round(((1-test_percent) * 10)/2) 
 		if type_crossval == 'groups_k-fold':
-			train_results = cv.groups_k_fold_iter(data, labels, s_labels, 
-				train_grp_animals, num_groups=n_groups, clf=type_classif, **kwargs)
+			train_results = cv.groups_k_fold_iter(train_data, train_labels, s_labels, 
+				train_grps_animals, num_groups=n_groups, clf=type_classif, **kwargs)
 
 		elif type_crossval == 'L_P_Groups_out':
 			n_groups = 2
-			train_results = leave_P_out_iter(data, labels, s_labels, train_grp_animals, 
+			train_results = leave_P_out_iter(train_data, train_labels, s_labels, train_grp_animals, 
 				num_groups=n_groups, clf=type_classif, **kwargs)
 
 		else:
@@ -123,6 +123,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	print(train_results[0][2])
 	if len(train_results[0]) == 5:
 		print(train_results[0][3].shape)
+		print(train_results[0][3])
 		print(train_results[0][4])
 	else:
 		print(train_results[0][3])

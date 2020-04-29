@@ -68,8 +68,6 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 
 	train_data = train_dict['data']
 	train_labels = train_dict['labels']
-	s_labels = train_dict['s_labs']
-	train_grp_animals = train_dict['train_grps']
 
 	cross_val_test_size=0.2
 
@@ -77,7 +75,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		kwargs = {}
 
 	elif type_classif == 'rf':
-		kwargs = {"n_trees" : 10, "boots" : False}
+		kwargs = {"n_trees" : 100, "boots" : True}
 
 	elif type_classif == 'svc':
 		kwargs = {"c" : 1.0, "kernel_type" : 'linear', "gamma_value" : 'scale'}
@@ -104,7 +102,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	if split_type == "general":
 
 		s_labels = train_dict['s_labs']
-		train_grps_animals = train_dict['train_grps']
+		train_grp_animals = train_dict['train_grps']
 		n_groups = round(((1-test_percent) * 10)/2) 
 		if type_crossval == 'groups_k-fold':
 			train_results = cv.groups_k_fold_iter(train_data, train_labels, s_labels, 

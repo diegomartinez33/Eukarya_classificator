@@ -43,8 +43,8 @@ def get_metrics(train_results, type_crossval, type_classif, **kwargs):
 	gmb.classif_report(train_results, savePath=savefolder + '/classif_report.txt')
 	gmb.get_prf(train_results, savefolder + '/get_prf.txt')
 	gmb.mcc(train_results, savefolder + '/mcc.txt')
-	gmb.p_r_curve_cv(train_results, savefolder + '/P_R_curve_cv.png')
-	gmb.ROC_curve(train_results, savefolder + '/ROC_curve_cv.png')
+	gmb.p_r_curve_cv(train_results, type_classif, savefolder + '/P_R_curve_cv.png')
+	gmb.ROC_curve(train_results, type_classif, savefolder + '/ROC_curve_cv.png')
 
 
 # Código para entrenar con los diferentes clasificadores y métodos de crossvalidación
@@ -68,8 +68,6 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 
 	train_data = train_dict['data']
 	train_labels = train_dict['labels']
-	s_labels = train_dict['s_labs']
-	train_grp_animals = train_dict['train_grps']
 
 	cross_val_test_size=0.2
 
@@ -104,7 +102,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	if split_type == "general":
 
 		s_labels = train_dict['s_labs']
-		train_grps_animals = train_dict['train_grps']
+		train_grp_animals = train_dict['train_grps']
 		n_groups = round(((1-test_percent) * 10)/2) 
 		if type_crossval == 'groups_k-fold':
 			train_results = cv.groups_k_fold_iter(train_data, train_labels, s_labels, 

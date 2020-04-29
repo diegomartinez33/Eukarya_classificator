@@ -161,7 +161,7 @@ def p_r_curve(y_test, probas_pred, averaged='Yes', savePath='',class_names=class
         fig3.savefig(savePath, bbox_inches = 'tight')
         plt.close(fig3)
 
-def p_r_curve_cv(train_cv_list, savePath=''):
+def p_r_curve_cv(train_cv_list, type_classif, savePath=''):
     # setup plot details
     precision = dict()
     recall = dict()
@@ -172,9 +172,14 @@ def p_r_curve_cv(train_cv_list, savePath=''):
 
     for i in range(folds):
         y_test, probas_pred = train_cv_list[i][1], train_cv_list[i][3]
-        precision[i], recall[i], _ = precision_recall_curve(y_test,
+        if type_classif == 'svc':
+            precision[i], recall[i], _ = precision_recall_curve(y_test,
+                                                            probas_pred)
+            average_precision[i] = average_precision_score(y_test, probas_pred)
+        else:
+            precision[i], recall[i], _ = precision_recall_curve(y_test,
                                                             probas_pred[:,1])
-        average_precision[i] = average_precision_score(y_test, probas_pred[:,1])
+            average_precision[i] = average_precision_score(y_test, probas_pred[:,1])
 
     colors = cycle(['b', 'g', 'r', 'c', 'm', 'y', 'k'])
 
@@ -209,15 +214,19 @@ def p_r_curve_cv(train_cv_list, savePath=''):
     fig3.savefig(savePath, bbox_inches = 'tight')
     plt.close(fig3)
 
-def ROC_curve(train_cv_list, savePath=''):
+def ROC_curve(train_cv_list, type_classif, savePath=''):
     fpr = dict()
     tpr = dict()
     roc_auc = dict()
     folds = len(train_cv_list)
     for i in range(folds):
         y_test, y_score = train_cv_list[i][1], train_cv_list[i][3]
-        fpr[i], tpr[i], _ = roc_curve(y_test, y_score[:,1], pos_label=1)
-        roc_auc[i] = roc_auc_score(y_test, y_score[:,1])
+        if type_classif == 'svc':
+            fpr[i], tpr[i], _ = roc_curve(y_test, y_score, pos_label=1)
+            roc_auc[i] = roc_auc_score(y_test, y_score)
+        else:
+            fpr[i], tpr[i], _ = roc_curve(y_test, y_score[:,1], pos_label=1)
+            roc_auc[i] = roc_auc_score(y_test, y_score[:,1])
 
     colors = cycle(['b', 'g', 'r', 'c', 'm', 'y', 'k'])
 

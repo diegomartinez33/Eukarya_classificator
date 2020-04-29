@@ -20,7 +20,8 @@ def get_train_results(model, test_data, test_labels, is_svc=False):
 	preds = model.predict(test_data)
 	mean_acc = model.score(test_data, test_labels)
 	if is_svc:
-		return [test_labels, preds, mean_acc]
+		dec_funct = model.decision_function(test_data)
+		return [test_labels, preds, dec_funct, mean_acc]
 	else:
 		probas = model.predict_proba(test_data)
 		return [test_labels, preds, probas, mean_acc]
@@ -44,7 +45,7 @@ def svc_classif(train_data, train_labels, test_data, test_labels,
 	if kernel_type == 'linear':
 		clf = svm.LinearSVC(C=c)
 	else:
-		clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value, probability=True)
+		clf = svm.SVC(C=c, kernel=kernel_type, gamma=gamma_value)
 	clf.fit(train_data, train_labels)
 	results = get_train_results(clf, test_data, test_labels, is_svc=True)
 	return [clf, results[0], results[1], results[2], results[3]]
