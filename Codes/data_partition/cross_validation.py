@@ -106,7 +106,7 @@ def groups_k_fold_iter(data, labels, s_labels, train_grp_animals, num_groups=4, 
 def leave_P_out_iter(data, labels, s_labels, train_grp_animals, num_groups=2, clf=None, **kwargs):
 	"""Function to separate folds as groups with separated instances of each organism
 	num_groups: number of groups in the train split. Can be 2 or 3 only"""
-	lpgo = LeavePGroupsOut(n_splits=num_groups)
+	lpgo = LeavePGroupsOut(n_groups=num_groups)
 	groups_list = lb.grouping_crossval(s_labels, ani_gps=train_grp_animals)
 	if clf == None:
 		interations = get_iterations(data, lpgo, labels, groups_list)

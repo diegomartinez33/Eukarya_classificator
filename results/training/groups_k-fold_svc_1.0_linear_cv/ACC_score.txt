@@ -1,0 +1,4 @@
+ACC for fold 0: 0.92
+ACC for fold 1: 0.80
+ACC for fold 2: 0.76
+ACC for fold 3: 0.66

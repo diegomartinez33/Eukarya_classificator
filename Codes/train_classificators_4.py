@@ -43,8 +43,8 @@ def get_metrics(train_results, type_crossval, type_classif, **kwargs):
 	gmb.classif_report(train_results, savePath=savefolder + '/classif_report.txt')
 	gmb.get_prf(train_results, savefolder + '/get_prf.txt')
 	gmb.mcc(train_results, savefolder + '/mcc.txt')
-	gmb.p_r_curve_cv(train_results, type_classif, savefolder + '/P_R_curve_cv.png')
-	gmb.ROC_curve(train_results, type_classif, savefolder + '/ROC_curve_cv.png')
+	gmb.p_r_curve_cv(train_results, savefolder + '/P_R_curve_cv.png')
+	gmb.ROC_curve(train_results, savefolder + '/ROC_curve_cv.png')
 
 
 # Código para entrenar con los diferentes clasificadores y métodos de crossvalidación
@@ -59,7 +59,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	- "qda"
 	- "rf 
 	- "svc" """
-	split_type="general" #"all" or "general"
+	split_type="all" #"all" or "general"
 	test_percent=0.2
 	type_labeling="per_group" #"per_group" or "per_spp"
 	splitted_data_file = os.path.join(partitions_dir,
@@ -75,7 +75,7 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 		kwargs = {}
 
 	elif type_classif == 'rf':
-		kwargs = {"n_trees" : 10, "boots" : False}
+		kwargs = {"n_trees" : 100, "boots" : True}
 
 	elif type_classif == 'svc':
 		kwargs = {"c" : 1.0, "kernel_type" : 'linear', "gamma_value" : 'scale'}
@@ -102,17 +102,16 @@ def train_model(type_crossval="k-fold", type_classif="qda"):
 	if split_type == "general":
 
 		s_labels = train_dict['s_labs']
-		train_grp_animals = train_dict['train_grps']
-		print(train_grp_animals)
+		train_grps_animals = train_dict['train_grps']
 		n_groups = round(((1-test_percent) * 10)/2) 
 		if type_crossval == 'groups_k-fold':
-			train_results = cv.groups_k_fold_iter(train_data, train_labels, s_labels, 
+			train_results = cv.groups_k_fold_iter(data, labels, s_labels, 
 				train_grp_animals, num_groups=n_groups, clf=type_classif, **kwargs)
 
 		elif type_crossval == 'L_P_Groups_out':
 			n_groups = 2
-			train_results = cv.leave_P_out_iter(train_data, train_labels, s_labels, train_grp_animals, 
-				num_groups=int(n_groups/2), clf=type_classif, **kwargs)
+			train_results = leave_P_out_iter(data, labels, s_labels, train_grp_animals, 
+				num_groups=n_groups, clf=type_classif, **kwargs)
 
 		else:
 			raise ValueError("If split_type: 'general'," + 
