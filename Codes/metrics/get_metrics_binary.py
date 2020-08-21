@@ -35,7 +35,7 @@ def ACC_score(train_cv_list, savePath=''):
          labels and groundtruth labels """
     folds = len(train_cv_list)
     for i in range(folds):
-        y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
+        y_true, y_pred = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][1]
         acc = accuracy_score(y_true, y_pred)
         line = 'ACC for fold {0}: {1:0.2f}'.format(i, acc)
         print(line)
@@ -44,7 +44,7 @@ def ACC_score(train_cv_list, savePath=''):
 def classif_report(train_cv_list, class_names=class_labs, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
-        y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
+        y_true, y_pred = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][1]
         class_rep = classification_report(y_true, y_pred, target_names=class_names)
         print('\nClassification report for fold {}'.format(i))
         print(class_rep)
@@ -54,7 +54,7 @@ def classif_report(train_cv_list, class_names=class_labs, savePath=''):
 def get_prf(train_cv_list, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
-        y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
+        y_true, y_pred = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][1]
         results = precision_recall_fscore_support(y_true, y_pred, pos_label=1)
         line1 = '\nP-R and F1 for fold {}'.format(i)
         print(line1)
@@ -72,7 +72,7 @@ def get_prf(train_cv_list, savePath=''):
 def mcc(train_cv_list, savePath=''):
     folds = len(train_cv_list)
     for i in range(folds):
-        y_true, y_pred = train_cv_list[i][1], train_cv_list[i][2]
+        y_true, y_pred = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][1]
         mcc = matthews_corrcoef(y_true, y_pred)
         line = 'MCC value for fold {} is: {}'.format(i, mcc)
         print(line)
@@ -171,7 +171,7 @@ def p_r_curve_cv(train_cv_list, type_classif, savePath=''):
     #y_test = label_binarize(y_test, list(range(0, fold_num)))
 
     for i in range(folds):
-        y_test, probas_pred = train_cv_list[i][1], train_cv_list[i][3]
+        y_test, probas_pred = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][2]
         if type_classif == 'svc':
             precision[i], recall[i], _ = precision_recall_curve(y_test,
                                                             probas_pred)
@@ -220,7 +220,7 @@ def ROC_curve(train_cv_list, type_classif, savePath=''):
     roc_auc = dict()
     folds = len(train_cv_list)
     for i in range(folds):
-        y_test, y_score = train_cv_list[i][1], train_cv_list[i][3]
+        y_test, y_score = train_cv_list[i]['clf_results'][0], train_cv_list[i]['clf_results'][2]
         if type_classif == 'svc':
             fpr[i], tpr[i], _ = roc_curve(y_test, y_score, pos_label=1)
             roc_auc[i] = roc_auc_score(y_test, y_score)

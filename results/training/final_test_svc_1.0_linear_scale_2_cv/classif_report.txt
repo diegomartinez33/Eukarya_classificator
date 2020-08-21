@@ -1,0 +1,10 @@
+Classification report for fold 0
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    285002
+     insects       0.81      0.79      0.80    285004
+
+    accuracy                           0.80    570006
+   macro avg       0.80      0.80      0.80    570006
+weighted avg       0.80      0.80      0.80    570006
+

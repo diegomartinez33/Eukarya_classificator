@@ -3,7 +3,6 @@ import os
 import sys
 import math
 import pandas as pd
-import sys
 import time
 import pandas
 import matplotlib
@@ -80,18 +79,19 @@ animals = {} #Dictionary that contains counts for each animal
 kmers = [] #List of kmers
 cont = 0
 for file in os.listdir(data_dir):
-    if file.endswith(".txt"):	
+    if file.endswith(".txt"):    
         file_name = file[:-4]
         animal = gn.get_animal(file)
         print(file_name)
         file_dir = os.path.join(data_dir,file)
+        ids = np.genfromtxt(file_dir, dtype=str)[0,1:]
         labels = np.genfromtxt(file_dir, skip_header=1, usecols=0, dtype=str)
         raw_data = np.genfromtxt(file_dir, skip_header=1)[:,1:]
         if filter_cvs:
             real_name = gn.get_real_animal_name(file_name)
             tsv_file = "cv_allReads_" + real_name + ".tsv"
             cvs_file = os.path.join(data_dir,"Scripts","cv_results",tsv_file)
-            raw_data = cv_ids.remove_outliers(raw_data,
+            raw_data = cv_ids.remove_outliers(raw_data, ids, 
                 cv_ids.get_cv_idx(cvs_file,filter_value))
         data = {label: row for label, row in zip(labels, raw_data)}
         # mini dict to save counts per kmer (label)
@@ -105,20 +105,21 @@ print("Creating dictionaries per each kmer...\n")
 kmers_dict = {} #Dict that has freqs of all animals per kmer
 #Keys are each kmer
 for kmer in kmers:
-	k_dict = {}
-	animal_list = [] #List of animals per freq
-	counts_list = [] #List of counts of that kmer, of that animal
-	for anim in animals.keys():
-		freqs = animals[anim][kmer]
-		list_lenght = len(animals[anim][kmer])
-		anim_rep_list = [anim] * list_lenght
-		animal_list = animal_list + anim_rep_list
-		#print(type(freqs))
-		counts_list = np.concatenate((np.asarray(counts_list),freqs), 
-			axis=None)
-	k_dict['animal'] = animal_list #Key for animal names
-	k_dict['freq'] = counts_list #Key for freqs of each animal
-	kmers_dict[kmer] = k_dict
+    k_dict = {}
+    animal_list = [] #List of animals per freq
+    counts_list = [] #List of counts of that kmer, of that animal
+    for anim in animals.keys():
+        freqs = animals[anim][kmer]
+        print(freqs.shape)
+        list_lenght = len(animals[anim][kmer])
+        anim_rep_list = [anim] * list_lenght
+        animal_list = animal_list + anim_rep_list
+        #print(type(freqs))
+        counts_list = np.concatenate((np.asarray(counts_list),freqs), 
+            axis=None)
+    k_dict['animal'] = animal_list #Key for animal names
+    k_dict['freq'] = counts_list #Key for freqs of each animal
+    kmers_dict[kmer] = k_dict
 
 #Create violin plots
 print("\nCreating violing plots...\n")
@@ -142,7 +143,7 @@ print(ani_names)
 #     axes.set_xticklabels(real_names)
 #     plt.setp(axes.get_xticklabels(), ha="right", rotation=45)
 
-# 	#save image
+#     #save image
 #     plot_file = kmer + "_violin_plot.png"
 #     print(plot_file)
 #     plot_save_dir = os.path.join(results_dir,plot_file)

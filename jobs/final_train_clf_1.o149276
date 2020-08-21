@@ -1,0 +1,40 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-12.local
+Corri el: Wed Jul 8 06:34:38 -05 2020
+
+ ------------ Summary of results for fold 0 -----------------
+
+# folds:  1
+test_labels shape:  (570006,)
+predictions shape:  (570006,)
+preds: 
+ [0. 1. 1. ... 1. 1. 1.]
+probabs or dec_function shape:  (570006,)
+probs or dec_function
+ [-0.42593176  0.59441873  0.30478426 ...  0.57999592  0.15624641
+  0.95476198]
+Mean Acc:  0.7998126335512258
+Mean acc for all folds: 0.7998126335512258
+props: 
+
+train:	class 0: 0.499999	class 1: 0.500001	
+test:	class 0: 0.499998	class 1: 0.500002	
+
+ACC for fold 0: 0.80
+
+Classification report for fold 0
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    285002
+     insects       0.81      0.79      0.80    285004
+
+    accuracy                           0.80    570006
+   macro avg       0.80      0.80      0.80    570006
+weighted avg       0.80      0.80      0.80    570006
+
+
+P-R and F1 for fold 0
+Precision: [0.79413972 0.8057086 ]
+Recall: [0.80945397 0.79017137]
+F1_score: [0.80172372 0.79786435]
+MCC value for fold 0 is: 0.5997368174906403

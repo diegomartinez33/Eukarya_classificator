@@ -1,0 +1,100 @@
+Fold: 0 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 3 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 0 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 3 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 0 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 3 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 0 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 3 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: qda	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 0 	 type_classif: qda	 fs_type: KBest	 max_score: 0.702078	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: qda	 fs_type: KBest	 max_score: 0.702391	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: qda	 fs_type: KBest	 max_score: 0.709860	
+kmers: ['AG' 'TG' 'CA' 'CT']
+
+
+Fold: 3 	 type_classif: qda	 fs_type: KBest	 max_score: 0.701277	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: qda	 fs_type: KBest	 max_score: 0.711446	
+kmers: ['TG' 'CA' 'CT']
+
+

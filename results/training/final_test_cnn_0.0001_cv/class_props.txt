@@ -1,0 +1,5 @@
+Fold 0
+
+train:	class 0: 0.499999	class 1: 0.500001	
+test:	class 0: 0.499998	class 1: 0.500002	
+

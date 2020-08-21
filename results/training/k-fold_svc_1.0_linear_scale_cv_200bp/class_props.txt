@@ -1,0 +1,25 @@
+Fold 0
+
+train:	class 0: 0.500093	class 1: 0.499907	
+test:	class 0: 0.499627	class 1: 0.500373	
+
+Fold 1
+
+train:	class 0: 0.499963	class 1: 0.500037	
+test:	class 0: 0.500147	class 1: 0.499853	
+
+Fold 2
+
+train:	class 0: 0.499982	class 1: 0.500018	
+test:	class 0: 0.500072	class 1: 0.499928	
+
+Fold 3
+
+train:	class 0: 0.499817	class 1: 0.500183	
+test:	class 0: 0.500730	class 1: 0.499270	
+
+Fold 4
+
+train:	class 0: 0.500144	class 1: 0.499856	
+test:	class 0: 0.499423	class 1: 0.500577	
+

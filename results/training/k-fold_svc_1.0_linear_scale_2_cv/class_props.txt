@@ -1,0 +1,50 @@
+Fold 0
+
+train:	class 0: 0.499856	class 1: 0.500144	
+test:	class 0: 0.500570	class 1: 0.499430	
+
+Fold 1
+
+train:	class 0: 0.500092	class 1: 0.499908	
+test:	class 0: 0.499628	class 1: 0.500372	
+
+Fold 2
+
+train:	class 0: 0.500141	class 1: 0.499859	
+test:	class 0: 0.499431	class 1: 0.500569	
+
+Fold 3
+
+train:	class 0: 0.500083	class 1: 0.499917	
+test:	class 0: 0.499663	class 1: 0.500337	
+
+Fold 4
+
+train:	class 0: 0.499823	class 1: 0.500177	
+test:	class 0: 0.500703	class 1: 0.499297	
+
+Fold 0
+
+train:	class 0: 0.500111	class 1: 0.499889	
+test:	class 0: 0.499550	class 1: 0.500450	
+
+Fold 1
+
+train:	class 0: 0.499795	class 1: 0.500205	
+test:	class 0: 0.500817	class 1: 0.499183	
+
+Fold 2
+
+train:	class 0: 0.500269	class 1: 0.499731	
+test:	class 0: 0.498920	class 1: 0.501080	
+
+Fold 3
+
+train:	class 0: 0.499873	class 1: 0.500127	
+test:	class 0: 0.500505	class 1: 0.499495	
+
+Fold 4
+
+train:	class 0: 0.499948	class 1: 0.500052	
+test:	class 0: 0.500203	class 1: 0.499797	
+

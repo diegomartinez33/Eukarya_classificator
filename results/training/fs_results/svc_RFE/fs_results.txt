@@ -1,0 +1,20 @@
+Fold: 0 	 type_classif: svc	 fs_type: RFE	 max_score: 0.799420	
+kmers: ['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GG']
+
+
+Fold: 1 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798511	
+kmers: ['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+Fold: 2 	 type_classif: svc	 fs_type: RFE	 max_score: 0.799104	
+kmers: ['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+Fold: 3 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798487	
+kmers: ['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+Fold: 4 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798954	
+kmers: ['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G']
+
+

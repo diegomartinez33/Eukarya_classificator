@@ -1,0 +1,40 @@
+Fold: 0 	 type_classif: svc	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 1 	 type_classif: svc	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 2 	 type_classif: svc	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 3 	 type_classif: svc	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 4 	 type_classif: svc	 fs_type: KBest	 max_score: 1.000000	
+kmers: ['CA']
+
+
+Fold: 0 	 type_classif: svc	 fs_type: KBest	 max_score: 0.798240	
+kmers: ['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+Fold: 1 	 type_classif: svc	 fs_type: KBest	 max_score: 0.799272	
+kmers: ['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+Fold: 2 	 type_classif: svc	 fs_type: KBest	 max_score: 0.799066	
+kmers: ['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+Fold: 3 	 type_classif: svc	 fs_type: KBest	 max_score: 0.798948	
+kmers: ['AA' 'AT' 'AG' 'TA' 'TT' 'TG' 'C' 'CA' 'CT' 'CG' 'G']
+
+
+Fold: 4 	 type_classif: svc	 fs_type: KBest	 max_score: 0.798972	
+kmers: ['AA' 'AT' 'AG' 'TA' 'TT' 'TG' 'CA' 'CT' 'CG' 'G']
+
+

@@ -1,0 +1,118 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-12.local
+Corri el: Wed Apr 29 14:04:07 -05 2020
+Recibe tipo de clasificador
+Begin fold:  1
+Begin fold:  2
+Begin fold:  3
+Begin fold:  4
+Begin fold:  5
+5
+(456002,)
+(456002,)
+[0. 1. 1. ... 1. 1. 1.]
+(456002,)
+[-1.01924297  0.45862016  0.21474074 ...  0.85736381  0.33567599
+  0.26742506]
+0.7987048302419726
+0.7990189500879031
+ACC for fold 0: 0.80
+ACC for fold 1: 0.80
+ACC for fold 2: 0.80
+ACC for fold 3: 0.80
+ACC for fold 4: 0.80
+
+Classification report for fold 0
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    228251
+     insects       0.80      0.79      0.80    227751
+
+    accuracy                           0.80    456002
+   macro avg       0.80      0.80      0.80    456002
+weighted avg       0.80      0.80      0.80    456002
+
+
+Classification report for fold 1
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    227850
+     insects       0.80      0.79      0.80    228151
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 2
+              precision    recall  f1-score   support
+
+      fishes       0.80      0.81      0.80    228053
+     insects       0.80      0.79      0.80    227948
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 3
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    227860
+     insects       0.80      0.79      0.80    228141
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 4
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    227987
+     insects       0.80      0.79      0.80    228014
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+P-R and F1 for fold 0
+Precision: [0.79406187 0.80351466]
+Recall: [0.80719471 0.79019631]
+F1_score: [0.80057444 0.79679984]
+
+P-R and F1 for fold 1
+Precision: [0.7946815 0.8045228]
+Recall: [0.80739083 0.79167306]
+F1_score: [0.80098575 0.79804621]
+
+P-R and F1 for fold 2
+Precision: [0.79507783 0.80432361]
+Recall: [0.80746142 0.79179023]
+F1_score: [0.80122178 0.79800771]
+
+P-R and F1 for fold 3
+Precision: [0.79371516 0.80369205]
+Recall: [0.80664882 0.79061195]
+F1_score: [0.80012973 0.79709834]
+
+P-R and F1 for fold 4
+Precision: [0.79343951 0.80396507]
+Recall: [0.80738814 0.78983308]
+F1_score: [0.80035306 0.79683642]
+MCC value for fold 0 is: 0.5974837711153206
+MCC value for fold 1 is: 0.5991340900858237
+MCC value for fold 2 is: 0.5993265399483781
+MCC value for fold 3 is: 0.5973339830283035
+MCC value for fold 4 is: 0.5973128965254998
+Traceback (most recent call last):
+  File "train_classificators.py", line 145, in <module>
+    train_model(sys.argv[1], sys.argv[2])
+  File "train_classificators.py", line 140, in train_model
+    get_metrics(train_results, type_crossval, type_classif, **kwargs)
+  File "train_classificators.py", line 46, in get_metrics
+    gmb.p_r_curve_cv(train_results, type_classif, savefolder + '/P_R_curve_cv.png')
+  File "/hpcfs/home/da.martinez33/Biologia/Codes/metrics/get_metrics_binary.py", line 177, in p_r_curve_cv
+    probas_pred[:,0])
+IndexError: too many indices for array

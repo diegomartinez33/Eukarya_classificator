@@ -1,0 +1,5 @@
+MCC value for fold 0 is: 0.5800005626625215
+MCC value for fold 1 is: 0.5836984853304692
+MCC value for fold 2 is: 0.5817621763505116
+MCC value for fold 3 is: 0.5818622957921026
+MCC value for fold 4 is: 0.5835215829183636

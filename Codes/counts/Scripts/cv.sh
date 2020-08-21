@@ -12,23 +12,23 @@
 
 module load R/3.5.1mro 
 
-#echo "locusta"
-#Rscript --vanilla cv.R ../locusta_counts.txt locusta
+echo "locusta"
+Rscript --vanilla cv.R ../counts_200bp/locusta_counts.txt locusta
 echo "tribolium"
-Rscript --vanilla cv.R ../tribolium_counts.txt tribolium
+Rscript --vanilla cv.R ../counts_200bp/tribolium_counts.txt tribolium
 echo "Harpegnathos"
-Rscript --vanilla cv.R ../harpegrathos_counts.txt Harpegnathos
+Rscript --vanilla cv.R ../counts_200bp/harpegrathos_counts.txt Harpegnathos
 echo "Bombyx"
-Rscript --vanilla cv.R ../bombix_counts.txt bombyx
+Rscript --vanilla cv.R ../counts_200bp/bombix_counts.txt bombyx
 echo "Acyrthosiphon"
-Rscript --vanilla cv.R ../acyroltosyphon_counts.txt Acyrthosiphon
+Rscript --vanilla cv.R ../counts_200bp/acyroltosyphon_counts.txt Acyrthosiphon
 echo "salmon"
-Rscript --vanilla cv.R ../salmon_counts.txt salmon
+Rscript --vanilla cv.R ../counts_200bp/salmon_counts.txt salmon
 echo "tilapia"
-Rscript --vanilla cv.R ../tilapia_counts.txt tilapia
+Rscript --vanilla cv.R ../counts_200bp/tilapia_counts.txt tilapia
 echo "bacalao"
-Rscript --vanilla cv.R ../Cod_counts.txt bacalao
+Rscript --vanilla cv.R ../counts_200bp/Cod_counts.txt bacalao
 echo "whale_shark"
-Rscript --vanilla cv.R ../whaleshark_counts.txt whale_shark
+Rscript --vanilla cv.R ../counts_200bp/whaleshark_counts.txt whale_shark
 echo "stickleback"
-Rscript --vanilla cv.R ../stickleback_counts.txt stickleback
+Rscript --vanilla cv.R ../counts_200bp/stickleback_counts.txt stickleback

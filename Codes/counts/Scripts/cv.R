@@ -73,18 +73,19 @@ sample_matrix<-matrix[,indx_200_s]
 print(nrow(sample_matrix))
 print(ncol(sample_matrix))
 
-pdf(paste("./GG_0.1/",organism,'_CV_GG_0.1.pdf',sep=""))
-hist(cv_organism[indx_200], col = "royalblue2", main =organism,
-     xlab = "CV", ylab = "Frequency")
-dev.off()
-
-print("Seleccion de frecuencias de muestra de 200")
-# filename=paste("./cv_results/cv_allReads_",organism,".tsv",sep="")
-# write.table(cv_organism,filename,sep="\t",row.names=F,col.names=T)
-# pdf(paste("./cv_hists/",organism,'_CV_distr.pdf',sep=""))
-# hist(cv_organism, col = "royalblue2", main =organism,
-#      xlab = "CV", ylab = "Frecuencia")
+# pdf(paste("./GG_0.1/",organism,'_CV_GG_0.1.pdf',sep=""))
+# hist(cv_organism[indx_200], col = "royalblue2", main =organism,
+#      xlab = "CV", ylab = "Frequency")
 # dev.off()
+
+#print("Seleccion de frecuencias de muestra de 200")
+print(paste0("generate CVs for: ", organism, " 200bp sequences"))
+filename=paste("./cv_results_200bp/cv_allReads_",organism,".tsv",sep="")
+write.table(cv_organism,filename,sep="\t",row.names=F,col.names=T)
+pdf(paste("./cv_hists/",organism,'_200bp_CV_distr.pdf',sep=""))
+hist(cv_organism, col = "royalblue2", main =organism,
+     xlab = "CV", ylab = "Frecuencia")
+dev.off()
 
 #filename=paste("./sample_200_counts/",organism,"_sample.tsv",sep="")
 #print(filename)

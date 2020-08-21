@@ -1,0 +1,108 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-12.local
+Corri el: Wed Apr 29 14:09:50 -05 2020
+Recibe tipo de clasificador
+Begin fold:  1
+Begin fold:  2
+Begin fold:  3
+Begin fold:  4
+Begin fold:  5
+5
+(456002,)
+(456002,)
+[1. 1. 0. ... 1. 1. 1.]
+(456002,)
+[ 0.06157874  0.48490687 -0.91263911 ...  0.03889362  0.26740004
+  0.33997704]
+0.7994065815500809
+0.7990356164102353
+ACC for fold 0: 0.80
+ACC for fold 1: 0.80
+ACC for fold 2: 0.80
+ACC for fold 3: 0.80
+ACC for fold 4: 0.80
+
+Classification report for fold 0
+              precision    recall  f1-score   support
+
+      fishes       0.80      0.81      0.80    228401
+     insects       0.80      0.79      0.80    227601
+
+    accuracy                           0.80    456002
+   macro avg       0.80      0.80      0.80    456002
+weighted avg       0.80      0.80      0.80    456002
+
+
+Classification report for fold 1
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    227400
+     insects       0.80      0.79      0.80    228601
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 2
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    228218
+     insects       0.80      0.79      0.80    227783
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 3
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    228121
+     insects       0.80      0.79      0.80    227880
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+Classification report for fold 4
+              precision    recall  f1-score   support
+
+      fishes       0.79      0.81      0.80    227861
+     insects       0.80      0.79      0.80    228140
+
+    accuracy                           0.80    456001
+   macro avg       0.80      0.80      0.80    456001
+weighted avg       0.80      0.80      0.80    456001
+
+
+P-R and F1 for fold 0
+Precision: [0.79560468 0.80333078]
+Recall: [0.80678281 0.79200443]
+F1_score: [0.80115475 0.7976274 ]
+
+P-R and F1 for fold 1
+Precision: [0.79307574 0.8047463 ]
+Recall: [0.80718997 0.7904996 ]
+F1_score: [0.80007061 0.79755933]
+
+P-R and F1 for fold 2
+Precision: [0.79378375 0.80383194]
+Recall: [0.80762692 0.78978677]
+F1_score: [0.8006455  0.79674746]
+
+P-R and F1 for fold 3
+Precision: [0.79407683 0.80414176]
+Recall: [0.8077117  0.79031947]
+F1_score: [0.80083623 0.7971707 ]
+
+P-R and F1 for fold 4
+Precision: [0.79453381 0.80403357]
+Recall: [0.80682521 0.79161041]
+F1_score: [0.80063234 0.79777363]
+MCC value for fold 0 is: 0.5988613428123438
+MCC value for fold 1 is: 0.5977558020285046
+MCC value for fold 2 is: 0.597514683398004
+MCC value for fold 3 is: 0.5981248681833711
+MCC value for fold 4 is: 0.5985014994402225

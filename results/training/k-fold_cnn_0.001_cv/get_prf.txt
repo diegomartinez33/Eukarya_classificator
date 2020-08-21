@@ -1,0 +1,25 @@
+
+P-R and F1 for fold 0
+Precision: [0.79708965 0.81516009]
+Recall: [0.821967   0.78957508]
+F1_score: [0.8093372  0.80216363]
+
+P-R and F1 for fold 1
+Precision: [0.79114641 0.82256946]
+Recall: [0.83001004 0.7824506 ]
+F1_score: [0.81011239 0.80200863]
+
+P-R and F1 for fold 2
+Precision: [0.        0.5001546]
+Recall: [0. 1.]
+F1_score: [0.         0.66680408]
+
+P-R and F1 for fold 3
+Precision: [0.79021348 0.82407287]
+Recall: [0.83407844 0.77826593]
+F1_score: [0.81155366 0.80051464]
+
+P-R and F1 for fold 4
+Precision: [0.         0.49980811]
+Recall: [0. 1.]
+F1_score: [0.         0.66649608]

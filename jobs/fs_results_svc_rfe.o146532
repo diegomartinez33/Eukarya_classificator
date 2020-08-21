@@ -1,0 +1,420 @@
+Corriendo el sub-muestreo de genomas
+Corri en la maquina: node-19.local
+Corri el: Tue Jun 23 17:08:11 -05 2020
+Recibe tipo de clasificador
+Begin fold:  1
+wrong data shape:  (91494, 20)
+Begin fold:  2
+wrong data shape:  (91915, 20)
+Begin fold:  3
+wrong data shape:  (91630, 20)
+Begin fold:  4
+wrong data shape:  (91911, 20)
+Begin fold:  5
+wrong data shape:  (91729, 20)
+
+ ------------ Summary of results for fold 1 -----------------
+
+# folds:  5
+test_labels shape:  (456002,)
+predictions shape:  (456002,)
+preds: 
+ [0. 0. 0. ... 1. 1. 1.]
+probabs or dec_function shape:  (456002,)
+probs or dec_function
+ [-0.45072652 -0.60993295 -0.07129711 ...  0.36748901  0.58484729
+  1.75174088]
+Mean Acc:  0.7993561431748106
+wrong data shape:  (91494, 20)
+wrong string labs shape:  (91494,)
+wrong ids shape:  (91494,)
+wrong data: 
+ [[0.335   0.14141 0.10101 ... 0.0404  0.0202  0.04545]
+ [0.305   0.11111 0.08081 ... 0.07576 0.05051 0.02525]
+ [0.35    0.11111 0.13131 ... 0.06566 0.      0.03535]
+ ...
+ [0.335   0.15657 0.09091 ... 0.0303  0.06061 0.03535]
+ [0.325   0.13131 0.10101 ... 0.0303  0.0404  0.0404 ]
+ [0.32    0.13131 0.08081 ... 0.06061 0.0202  0.05051]]
+wrong s labs: 
+ ['stickleback' 'stickleback' 'stickleback' ... 'tribolium' 'tribolium'
+ 'tribolium']
+wrong ids: 
+ ['VDFJ01000088.1_19364' 'VDFJ01000020.1_54665' 'VDFJ01000018.1_15443' ...
+ 'NC_007418.3_59202' 'NC_007419.2_65497' 'NC_007417.3_86091']
+Mean acc for all folds: 0.7988255291737768
+
+---------------- fold 0 ---------------------
+
+fs_results length:  20
+
+score: 0.6307560054561164	fs_type: RFE	selected_kmers['CG']
+
+
+score: 0.7944000245612958	fs_type: RFE	selected_kmers['CG' 'G']
+
+
+score: 0.797356151946702	fs_type: RFE	selected_kmers['CA' 'CG' 'G']
+
+
+score: 0.797356151946702	fs_type: RFE	selected_kmers['T' 'CA' 'CG' 'G']
+
+
+score: 0.7973276432998101	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CG' 'G']
+
+
+score: 0.7982684286472428	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7982223762176481	fs_type: RFE	selected_kmers['A' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7982706216200807	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7993934237130539	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7993276345279188	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7993320204735944	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7993254415550809	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.799419739387108	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GG']
+
+
+score: 0.7994175464142701	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GG']
+
+
+score: 0.7993868447945404	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GC' 'GG']
+
+
+score: 0.7993254415550809	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GC'
+ 'GG']
+
+
+score: 0.7993473712834592	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA'
+ 'GC' 'GG']
+
+
+score: 0.7993561431748106	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GC' 'GG']
+
+
+score: 0.7993539502019728	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GT' 'GC' 'GG']
+
+
+score: 0.7993539502019728	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AC' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG'
+ 'G' 'GA' 'GT' 'GC' 'GG']
+
+fs_results: 
+
+Fold: 0 	 type_classif: svc	 fs_type: RFE	 max_score: 0.799420	
+ kmers: ['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA' 'GG']
+
+
+
+---------------- fold 1 ---------------------
+
+fs_results length:  20
+
+score: 0.6298538818993819	fs_type: RFE	selected_kmers['CG']
+
+
+score: 0.7937065927487001	fs_type: RFE	selected_kmers['CG' 'G']
+
+
+score: 0.7970969361909294	fs_type: RFE	selected_kmers['CA' 'CG' 'G']
+
+
+score: 0.7970969361909294	fs_type: RFE	selected_kmers['T' 'CA' 'CG' 'G']
+
+
+score: 0.7970969361909294	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CG' 'G']
+
+
+score: 0.7979258817414874	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7979258817414874	fs_type: RFE	selected_kmers['A' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7979302676967813	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7979324606744284	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TG' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7985114067732307	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7985114067732307	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7985048278402899	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7984741261532321	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7984565823320563	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7984631612649973	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7984390385108805	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC'
+ 'GG']
+
+
+score: 0.7984368455332335	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA'
+ 'GC' 'GG']
+
+
+score: 0.7984324595779395	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GC' 'GG']
+
+
+score: 0.7984324595779395	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GT' 'GC' 'GG']
+
+
+score: 0.7984324595779395	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AC' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG'
+ 'G' 'GA' 'GT' 'GC' 'GG']
+
+fs_results: 
+
+Fold: 1 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798511	
+ kmers: ['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+
+---------------- fold 2 ---------------------
+
+fs_results length:  20
+
+score: 0.6315819482852011	fs_type: RFE	selected_kmers['CG']
+
+
+score: 0.7946912397121936	fs_type: RFE	selected_kmers['CG' 'G']
+
+
+score: 0.7977943030826686	fs_type: RFE	selected_kmers['CA' 'CG' 'G']
+
+
+score: 0.7977943030826686	fs_type: RFE	selected_kmers['T' 'CA' 'CG' 'G']
+
+
+score: 0.7977943030826686	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CG' 'G']
+
+
+score: 0.7981495654614793	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7981517584391262	fs_type: RFE	selected_kmers['A' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7981473724838323	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7990837739390922	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7990377214085057	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7990355284308587	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7990443003414466	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7991035107379151	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7990837739390922	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7990552652296815	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7990618441626225	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC'
+ 'GG']
+
+
+score: 0.7990618441626225	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GC' 'GG']
+
+
+score: 0.7990618441626225	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GC' 'GG']
+
+
+score: 0.7990574582073285	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GT' 'GC' 'GG']
+
+
+score: 0.7990574582073285	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AC' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG'
+ 'G' 'GA' 'GT' 'GC' 'GG']
+
+fs_results: 
+
+Fold: 2 	 type_classif: svc	 fs_type: RFE	 max_score: 0.799104	
+ kmers: ['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+
+---------------- fold 3 ---------------------
+
+fs_results length:  20
+
+score: 0.6292749358005794	fs_type: RFE	selected_kmers['CG']
+
+
+score: 0.7937658031451685	fs_type: RFE	selected_kmers['CG' 'G']
+
+
+score: 0.796719744035649	fs_type: RFE	selected_kmers['CA' 'CG' 'G']
+
+
+score: 0.796719744035649	fs_type: RFE	selected_kmers['T' 'CA' 'CG' 'G']
+
+
+score: 0.796719744035649	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CG' 'G']
+
+
+score: 0.7977394786414942	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7977416716191412	fs_type: RFE	selected_kmers['T' 'TG' 'C' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7977394786414942	fs_type: RFE	selected_kmers['A' 'T' 'TG' 'C' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7984171087344106	fs_type: RFE	selected_kmers['A' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7984127227791167	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7984346525555865	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7984280736226456	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.798487284019114	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7984587753097032	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7984631612649973	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7984478104214684	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC'
+ 'GG']
+
+
+score: 0.7984390385108805	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA'
+ 'GC' 'GG']
+
+
+score: 0.7984390385108805	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GC' 'GG']
+
+
+score: 0.7984456174438214	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GT' 'GC' 'GG']
+
+
+score: 0.7984478104214684	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AC' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG'
+ 'G' 'GA' 'GT' 'GC' 'GG']
+
+fs_results: 
+
+Fold: 3 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798487	
+ kmers: ['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+
+---------------- fold 4 ---------------------
+
+fs_results length:  20
+
+score: 0.6304964243499466	fs_type: RFE	selected_kmers['CG']
+
+
+score: 0.7942307144063281	fs_type: RFE	selected_kmers['CG' 'G']
+
+
+score: 0.7972657954697467	fs_type: RFE	selected_kmers['CA' 'CG' 'G']
+
+
+score: 0.7972657954697467	fs_type: RFE	selected_kmers['T' 'CA' 'CG' 'G']
+
+
+score: 0.7972657954697467	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CG' 'G']
+
+
+score: 0.7976912331332606	fs_type: RFE	selected_kmers['T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7976912331332606	fs_type: RFE	selected_kmers['A' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7976912331332606	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7989543882579205	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+score: 0.7988885989285112	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7989083357273339	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CG' 'G' 'GG']
+
+
+score: 0.7988929848838051	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7988118447108669	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GG']
+
+
+score: 0.7988688621296883	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7988600902191004	fs_type: RFE	selected_kmers['A' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC' 'GG']
+
+
+score: 0.7988513183085125	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GC'
+ 'GG']
+
+
+score: 0.7988403534202776	fs_type: RFE	selected_kmers['A' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G' 'GA'
+ 'GC' 'GG']
+
+
+score: 0.7988425463979245	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GC' 'GG']
+
+
+score: 0.7988403534202776	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG' 'G'
+ 'GA' 'GT' 'GC' 'GG']
+
+
+score: 0.7988403534202776	fs_type: RFE	selected_kmers['A' 'AA' 'AT' 'AC' 'AG' 'T' 'TA' 'TT' 'TC' 'TG' 'C' 'CA' 'CT' 'CC' 'CG'
+ 'G' 'GA' 'GT' 'GC' 'GG']
+
+fs_results: 
+
+Fold: 4 	 type_classif: svc	 fs_type: RFE	 max_score: 0.798954	
+ kmers: ['A' 'AG' 'T' 'TA' 'TG' 'CA' 'CT' 'CG' 'G']
+
+

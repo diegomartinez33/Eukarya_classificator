@@ -1,0 +1,40 @@
+Fold: 0 	 type_classif: rf	 fs_type: SFM	 max_score: 0.773668	
+kmers: ['TT' 'TG' 'CA' 'CT' 'CG' 'G']
+
+
+Fold: 1 	 type_classif: rf	 fs_type: SFM	 max_score: 0.780128	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 2 	 type_classif: rf	 fs_type: SFM	 max_score: 0.777862	
+kmers: ['AA' 'AG' 'TT' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 3 	 type_classif: rf	 fs_type: SFM	 max_score: 0.780338	
+kmers: ['AA' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 4 	 type_classif: rf	 fs_type: SFM	 max_score: 0.777781	
+kmers: ['AG' 'TT' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 0 	 type_classif: rf	 fs_type: SFM	 max_score: 0.779777	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 1 	 type_classif: rf	 fs_type: SFM	 max_score: 0.781169	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 2 	 type_classif: rf	 fs_type: SFM	 max_score: 0.780814	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 3 	 type_classif: rf	 fs_type: SFM	 max_score: 0.780507	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+
+Fold: 4 	 type_classif: rf	 fs_type: SFM	 max_score: 0.779672	
+kmers: ['AG' 'TG' 'CA' 'CT' 'CG']
+
+

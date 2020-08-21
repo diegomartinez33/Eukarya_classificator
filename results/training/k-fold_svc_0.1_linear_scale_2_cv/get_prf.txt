@@ -1,0 +1,50 @@
+
+P-R and F1 for fold 0
+Precision: [0.79403481 0.80264725]
+Recall: [0.80625495 0.79025875]
+F1_score: [0.80009822 0.79640483]
+
+P-R and F1 for fold 1
+Precision: [0.79317132 0.80511833]
+Recall: [0.80780931 0.79032858]
+F1_score: [0.8004234 0.7976549]
+
+P-R and F1 for fold 2
+Precision: [0.79479364 0.8024985 ]
+Recall: [0.80642692 0.79069041]
+F1_score: [0.80056802 0.7965507 ]
+
+P-R and F1 for fold 3
+Precision: [0.79561533 0.80360629]
+Recall: [0.80708737 0.7919806 ]
+F1_score: [0.8013103  0.79775109]
+
+P-R and F1 for fold 4
+Precision: [0.79305977 0.8051922 ]
+Recall: [0.80736646 0.79076588]
+F1_score: [0.80014917 0.79791384]
+
+P-R and F1 for fold 0
+Precision: [0.79315562 0.80510321]
+Recall: [0.80822363 0.78985377]
+F1_score: [0.80061874 0.79740559]
+
+P-R and F1 for fold 1
+Precision: [0.79370581 0.80451346]
+Recall: [0.80782782 0.79021114]
+F1_score: [0.80070455 0.79729816]
+
+P-R and F1 for fold 2
+Precision: [0.79336203 0.80265551]
+Recall: [0.80584436 0.79002158]
+F1_score: [0.79955448 0.79628844]
+
+P-R and F1 for fold 3
+Precision: [0.79530194 0.80263885]
+Recall: [0.8061417  0.79165385]
+F1_score: [0.80068513 0.7971085 ]
+
+P-R and F1 for fold 4
+Precision: [0.79509451 0.80412   ]
+Recall: [0.80687537 0.79221434]
+F1_score: [0.80094162 0.79812277]
